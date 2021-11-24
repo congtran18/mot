@@ -1,5 +1,6 @@
-import React from 'react'
-import styled from 'styled-components';
+import React from "react";
+import { Link } from "react-router-dom";
+import styled from "styled-components";
 import { mobile } from "../responsive";
 import { tablet } from "../responsive";
 
@@ -22,8 +23,8 @@ const Wrapper = styled.div`
   width: 25%;
   padding: 20px;
   background-color: white;
-  ${mobile({ width: "75%"})}
-  ${tablet({ width: "75%"})}
+  ${mobile({ width: "75%" })}
+  ${tablet({ width: "75%" })}
 `;
 
 const Title = styled.h1`
@@ -53,11 +54,19 @@ const Button = styled.button`
   margin-bottom: 10px;
 `;
 
-const Link = styled.a`
+const Links = styled.a`
   margin: 5px 0px;
   font-size: 12px;
   text-decoration: underline;
   cursor: pointer;
+`;
+
+const LinkHome = styled(Link)`
+  margin: 5px 0px;
+  font-size: 12px;
+  text-decoration: underline;
+  cursor: pointer;
+  color: black;
 `;
 
 const Login = () => {
@@ -66,15 +75,16 @@ const Login = () => {
       <Wrapper>
         <Title>SIGN IN</Title>
         <Form>
-          <Input placeholder="Username" />
-          <Input placeholder="Password" />
+          <Input placeholder='Username' />
+          <Input placeholder='Password' />
           <Button>LOGIN</Button>
-          <Link>DO NOT REMEMBER THE PASSWORD ?</Link>
-          <Link>CREATE A NEW ACCOUNT</Link>
+          <Links>DO NOT REMEMBER THE PASSWORD ?</Links>
+          <Links>CREATE A NEW ACCOUNT</Links>
+          <LinkHome to='/'>GO BACK HOME</LinkHome>
         </Form>
       </Wrapper>
     </Container>
-  )
-}
+  );
+};
 
-export default Login
+export default Login;

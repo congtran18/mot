@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { mobile } from "../responsive";
 import { tablet } from "../responsive";
@@ -57,6 +58,14 @@ const Button = styled.button`
   cursor: pointer;
 `;
 
+const LinkHome = styled(Link)`
+  margin: 5px 0px;
+  font-size: 12px; 
+  text-decoration: underline;
+  cursor: pointer;
+  color: black;
+`;
+
 const Register = () => {
   return (
     <Container>
@@ -70,7 +79,8 @@ const Register = () => {
           <Input placeholder="Password" />
           <Input placeholder="Confirm Password" />
           <Agreement>
-            By creating an account, I consent to the processing of my personal data in accordance with  <b>PRIVACY POLICY</b>.
+            By creating an account, I consent to the processing of my personal data in accordance with  <b>PRIVACY POLICY</b>. <br />
+            <LinkHome to="/">Go back home</LinkHome>
           </Agreement>
           <Button>CREATE</Button>
         </Form>
